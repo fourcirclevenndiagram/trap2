@@ -25,7 +25,7 @@ public class StageManager : MonoBehaviour
     public void NextBtn()
     {
         if(currentStage < go_Stages.Length - 1)
-        {            
+        {
             PlayerController.canMove = true;
             playerRigid.isKinematic = false;
             theSM.ResetCurrentScore();
@@ -36,7 +36,7 @@ public class StageManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("모든 스테이지를 클리어함");        
+            Debug.Log("the End");        
         }
     }
 }
