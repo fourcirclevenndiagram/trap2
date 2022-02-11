@@ -29,6 +29,7 @@ public class StatusManager : MonoBehaviour
         if(!isInvincibleMode)
         {
             currentHp -= _num;
+            Debug.Log(currentHp);
             UpdateHpStatus();
             if(currentHp <= 0)
                 PlayerDead();
