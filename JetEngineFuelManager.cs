@@ -67,7 +67,7 @@ public class JetEngineFuelManager : MonoBehaviour
             currentWaitRechargeFuel += Time.deltaTime;
             if(currentWaitRechargeFuel >= waitRechargeFuel)
             {
-                currentFuel += rechargeSpeed * Time.deltaTime;
+                currentFuel += rechargeSpeed * Time.deltaTime;                
             }
         }
         else

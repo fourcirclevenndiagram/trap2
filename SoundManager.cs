@@ -57,6 +57,4 @@ public class SoundManager : MonoBehaviour
         bgmPlayer.clip = bgmSounds[random].clip;
         bgmPlayer.Play();
     }
-
-
 }

@@ -31,7 +31,7 @@ public class JetPackController : FollowPlayer
         {
             transform.position = Vector3.Lerp(transform.position,
                                             tf_Player.position - new Vector3(currentPos.x, currentPos.y, 0f), speed);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(-56, 0, 0), spinSpeed);            
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), spinSpeed);            
         }
         
     }
