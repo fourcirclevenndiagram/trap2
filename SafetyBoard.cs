@@ -8,9 +8,7 @@ public class SafetyBoard : MonoBehaviour
     [SerializeField] float horizontalDistance; // 수평 움직임
     [Range(0,1)]
     [SerializeField] float moveSpeed; // 움직일 스피드
-    [SerializeField] int hp;
     [SerializeField] int damage;
-    [SerializeField] GameObject go_EffectPrefab;
 
     Vector3 endPos1;
     Vector3 endPos2;
@@ -37,23 +35,10 @@ public class SafetyBoard : MonoBehaviour
         if(other.transform.name == "Player") // Hierarchy에서 취급하는 이름을 참조
         {
             other.transform.GetComponent<StatusManager>().DecreaseHp(damage);
-            Explosion();
+            // other.transform.Translate(new Vector3(0, 0, 0)); // 지정된 좌표로 이동시키는 좌표라고 착각하여 이 함수를 사용했다.
+            // other.transform.position(new Vector3(0, 0, 0));  // 상동
 
+            other.transform.Rotate(new Vector3(10f, 20f, 10f) * Time.deltaTime);
         }
     }
-
-    public void Damaged(int _num)
-    {
-        hp -= _num;
-        if(hp <= 0)
-            Explosion();
-    }
-    void Explosion()
-    {
-        SoundManager.instance.PlaySE("Mine");
-        GameObject clone = Instantiate(go_EffectPrefab, transform.position, Quaternion.identity);
-        Destroy(clone, 2f);
-        Destroy(gameObject);
-    }
-
 }
